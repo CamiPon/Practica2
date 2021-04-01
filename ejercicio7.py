@@ -30,6 +30,8 @@ f.close()
 #for elem in lista:
 #    if elem[1] < prom:
 #        print(elem[0])
+#
+#hay mejor forma de hacerlo
 total = []
 for nota1, nota2 in zip(eval1,eval2):
     total.append(sum([int(nota1.strip(string.punctuation)),int(nota2.strip(string.punctuation))]))
