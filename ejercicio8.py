@@ -1,4 +1,10 @@
 import string
+def nombres_en_ambas(lista1, lista2):
+    """Función que recibe dos listas con nombres e imprime los nombres 
+    coincidentes en ambas (es case sensitive)"""
+    lista_concidencias = [nom1 for nom1 in lista1 if nom1.upper() in lista2]
+    print('Los nombres que se encuentran en ambas listas son: \n')
+    print(sorted(list(set(lista_concidencias))))
 nombres1="""'Agustin',
  'Alan',
  'Andrés',
@@ -150,8 +156,7 @@ eval1 = """81,
  65,
  93,
  63,
- 74
-""" 
+ 74""" 
 eval2 = """30,
  95,
  28,
@@ -199,13 +204,16 @@ eval2 = """30,
  33,
  57,
  10"""
+#Creación de listas correspondientes para los datos dados
 eval_1 = [int(ev.strip(string.punctuation)) for ev in eval1.split()]
 eval_2 = [int(ev.strip(string.punctuation)) for ev in eval2.split()]
 lista_1 = [nom.strip(string.punctuation) for nom in nombres1.split()]
-#lista_2 = [nom.strip(string.punctuation).upper() for nom in nombres2.split()]
-#lista_concidencias = [nom1 for nom1 in lista_1 if nom1.upper() in lista_2]
-#print(sorted(list(set(lista_concidencias))))
-
+lista_2 = [nom.strip(string.punctuation).upper() for nom in nombres2.split()]
+#Primer inciso, se indican que nombres se encuentran en ambas listas
+nombres_en_ambas(lista_1,lista_2)
+#Segundo inciso, todavía no entendí bien el enunciado, falta arreglar
 suma_notas = [sum(i) for i in list(zip(eval_1,eval_2))]
-lista_total = list(zip(lista_1,suma_notas))
-print(lista_total)
+#lista_total = list(zip(lista_1,suma_notas))
+print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format('','Nombre','Eval1','Eval2','Total'))
+for i in range(len(suma_notas)):
+    print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format(str(i) + ' ',lista_total[i][0],eval_1[i],eval_2[i],suma_notas[i]))
