@@ -205,15 +205,16 @@ eval2 = """30,
  57,
  10"""
 #Creación de listas correspondientes para los datos dados
-eval_1 = [int(ev.strip(string.punctuation)) for ev in eval1.split()]
-eval_2 = [int(ev.strip(string.punctuation)) for ev in eval2.split()]
 lista_1 = [nom.strip(string.punctuation) for nom in nombres1.split()]
 lista_2 = [nom.strip(string.punctuation).upper() for nom in nombres2.split()]
 #Primer inciso, se indican que nombres se encuentran en ambas listas
 nombres_en_ambas(lista_1,lista_2)
-#Segundo inciso, todavía no entendí bien el enunciado, falta arreglar
+#Segundo inciso, genero las dos variables
+eval_1 = [int(ev.strip(string.punctuation)) for ev in eval1.split()]
+eval_2 = [int(ev.strip(string.punctuation)) for ev in eval2.split()]
+#realizo la suma de las notas y las guardo en una lista
 suma_notas = [sum(i) for i in list(zip(eval_1,eval_2))]
-#lista_total = list(zip(lista_1,suma_notas))
+#impresión con formato
 print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format('','Nombre','Eval1','Eval2','Total'))
 for i in range(len(suma_notas)):
-    print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format(str(i) + ' ',lista_total[i][0],eval_1[i],eval_2[i],suma_notas[i]))
+    print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format(str(i) + ' ',lista_1[i][0],eval_1[i],eval_2[i],suma_notas[i]))
