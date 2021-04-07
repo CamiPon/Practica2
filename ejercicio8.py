@@ -217,4 +217,4 @@ suma_notas = [sum(i) for i in list(zip(eval_1,eval_2))]
 #impresión con formato
 print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format('','Nombre','Eval1','Eval2','Total'))
 for i in range(len(suma_notas)):
-    print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format(str(i) + ' ',lista_1[i][0],eval_1[i],eval_2[i],suma_notas[i]))
+    print('{:>3}{:<14}{:^8}{:^8}{:^8}'.format(str(i) + ' ',lista_1[i],eval_1[i],eval_2[i],suma_notas[i]))
